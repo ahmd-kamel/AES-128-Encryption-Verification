@@ -10,7 +10,7 @@ class aes_driver extends uvm_driver #(aes_sequence_item);
 
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        item = aes_sequence_item :: type_id :: create("item", this);
+        item = aes_sequence_item :: type_id :: create("item");
 	if(!uvm_config_db#(virtual intf) :: get(this, "", "drv_if", vif))
 		`uvm_fatal(get_full_name(), "Error!")
     endfunction
